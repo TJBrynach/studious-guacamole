@@ -7,25 +7,18 @@ def guess():
     print('Hello! Please pick a number between 0 and 100, I will try and guess it :) Are you ready?')
     low = 1
     high = 100
-    g = randint(low,high)
-    time.sleep(3)
-    x = input(print(f'Is {g}, Your number (C), Too high (H) or Too low (T) ?'))
-    
-    while x != 'C' or x != 'c':
+    x = ''
+    #time.sleep(2)
+   
+    while x[0] != 'x':
+        g = randint(low,high)
+        x = input(print(f'Is {g}, Your number (C), Too high (H) or Too low (L) ?')).lower()
+        if x[0] == 'h':
+            low = g + 1
+        elif x[0] == 'l':
+            high = g - 1
 
-"""
-
-    while x[0] == 'n' or x[0] == 'N':
-        hol = input(print('higher or lower : '))
-        if hol[0] == 'h' or hol[0] == 'H':
-            low = g
-            g1 = randint(low,high)
-            y = input(print(f'Is your number : {g1}  ?'))
-        else:
-            g1 = randint(low,high)
-            high = g
-            y = input(print(f'Is your number : {g1}  ?'))
-"""
+    print(f'Got your number! {g}')
 
 
 guess()
