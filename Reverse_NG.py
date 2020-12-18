@@ -6,15 +6,14 @@ def guess():
     low = 1
     high = 100
     x = ''  
-    
-    while x[0] != 'c':
+
+    while x != 'c':
         g = randint(low, high)
         x = input(print(f'Is {g}, Your number (C), Too high (H) or Too low (L) ?')).lower()
         if x[0] == 'h':
             low = g + 1
         elif x[0] == 'l':
             high = g - 1
-
     print(f'Got your number! {g}')
 
 
