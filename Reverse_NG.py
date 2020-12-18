@@ -1,4 +1,7 @@
 # Reverse Number guessing game, User picks a number and its the computers place to guess what it is.
+# It works, need to fix so low and high are the same it stops so it doesnt induce an error
+# also if the user enters a different letter it doesnt accept it  
+
 
 from random import randint
 
