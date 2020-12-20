@@ -7,9 +7,8 @@ def rand_word():
     wordlst = words.words()
     rand_word = random.choice(wordlst).lower()
     return rand_word
-#rand_word()
 
-WORD = 'cat'
+WORD = rand_word()
 letters = []
 g_word = []
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
