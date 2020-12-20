@@ -41,7 +41,6 @@ def guessing():
                 for i in range(0, len(WORD)):
                     if WORD[i] == move:
                         g_word[i] = move
-                moves += 1
                 print(" ".join(g_word))
                 print('You have', 10 - moves,' moves remaining!')
                 print('Used letters are: '," ".join(letters))
