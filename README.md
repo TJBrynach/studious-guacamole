@@ -5,3 +5,4 @@ Going to be working through some simple projects at first, before getting more c
 - [x] Number Guesser 
 - [x] Number Guesser (Computer)
 - [x] Hangman
+- [] Dice Rolling Simulator 
