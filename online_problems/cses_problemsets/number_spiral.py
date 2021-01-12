@@ -1,0 +1,1 @@
+# number spiral is an infinite grid where the top left is 1
