@@ -35,4 +35,26 @@ def numberOfMatches(self, n: int) -> int:
             n = (n-1)/2 + 1
     return int(count)
 
+def singleNumber(nums):
+    dict1 = {}
+    for i in nums:
+        dict1.get(i,None)
+        if i not in dict1:
+            dict1[i] = 1
+        else:
+            dict1[i] += 1
 
+    for key, values in dict1.items():
+        if values == 1:
+            return key
+            
+#####################
+from collections import defaultdict
+def singleNumber(self, nums: List[int]) -> int:
+    hash_table = defaultdict(int)
+    for i in nums:
+        hash_table[i] += 1
+    
+    for i in hash_table:
+        if hash_table[i] == 1:
+            return i
