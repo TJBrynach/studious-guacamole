@@ -139,3 +139,107 @@ def isPowerOfThree(self, n: int) -> bool:
             if n == 3:
                 return True
         return False
+
+#########
+# 83. Remove Duplicates from Sorted List
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def deleteDuplicates(head: ListNode):
+    currentNode = head
+    while currentNode != None and currentNode.next != None:
+        if currentNode.val == currentNode.next.val:
+            currentNode.next = currentNode.next.next  #Skipping the replicate node
+        else:
+            currentNode = currentNode.next #moving to the next node 
+    return head
+
+
+# 387. First Unique Character in a String
+# first attempt
+
+def firstUniqChar(self, s: str) -> int:
+        hash = {}
+        for char in s:
+            hash.get(char,None)
+            if char not in hash:
+                hash[char] = 1
+            else:
+                hash[char] += 1
+        letter = ''
+        for key, values in hash.items():
+            if values == 1:
+                letter = key
+                break
+        
+        for char in range(len(s)):
+            if s[char] == letter:
+                return char
+
+# given solution on leetcode
+
+def firstUniqChar(self, s: str) -> int:
+    count = collections.Counter(s) # the counter function within the collecitons modeule keeps track of how many times  equiv values are added.
+
+    for index, char in enumerate(s):
+        if count[char] == 1:
+            return index
+    return -1
+
+
+# 217 Duplicates 
+
+def containsDuplicate(self, nums: List[int]) -> bool:
+    return len(set(nums)) != len(nums)
+
+#   OR the dictionary method
+
+def containsDuplicate(self, nums: List[int]) -> bool:
+    hash = {}
+    for i in nums:
+        hash.get(i,None)
+        if i not in hash:
+            hash[i] = 1
+        else:
+            return True
+    return False
+
+# 218 Majority Element
+
+def majorityElement(self, nums: List[int]) -> int:
+    counts = collections.Counter(nums)
+    return max(counts.keys(), key=counts.get)
+
+
+
+# 1748. Sum of Unique Elements
+
+def sumOfUnique(self, nums: List[int]) -> int:
+    hash = {}
+    sum = 0
+    
+    for i in nums:
+        hash.get(i, None)
+        if i not in hash:
+            hash[i] = 1
+        else:
+            hash[i] += 1
+    
+    for value, key in hash.items():
+        if key == 1:
+            sum += value
+    return sum
+
+# The entire first for loop to generate your python dictionary can be replaced with collection function
+# Counter <-------
+
+def sumOfUnique(self, nums: List[int]) -> int:
+    sum = 0
+    x = Counter(nums)
+    
+    for value, key in x.items():
+        if key == 1:
+            sum += value
+    return sum
